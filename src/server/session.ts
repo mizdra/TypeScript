@@ -3447,6 +3447,7 @@ export class Session<TMessage = string> implements EventSender {
                     content: file.fileContent,
                     scriptKind: file.scriptKindName,
                     projectRootPath: file.projectRootPath,
+                    languageId: file.languageId,
                 })),
                 request.arguments.changedFiles && mapIterator(request.arguments.changedFiles, file => ({
                     fileName: file.fileName,

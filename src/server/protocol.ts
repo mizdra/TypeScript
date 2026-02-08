@@ -1689,6 +1689,7 @@ export interface OpenRequestArgs extends FileRequestArgs {
      * root path; otherwise it will go all the way up to the dist root path.
      */
     projectRootPath?: string;
+    languageId?: string;
 }
 
 export type ScriptKindName = "TS" | "JS" | "TSX" | "JSX";

@@ -408,6 +408,8 @@ export class ScriptInfo {
     /** @internal */
     deferredDelete?: boolean;
 
+    languageId?: string;
+
     constructor(
         private readonly host: ServerHost,
         readonly fileName: NormalizedPath,
@@ -646,6 +648,10 @@ export class ScriptInfo {
             }
             this.preferences = { ...this.preferences, ...preferences };
         }
+    }
+
+    setLanguageId(languageId: string): void {
+        this.languageId = languageId;
     }
 
     getLatestVersion(): string {

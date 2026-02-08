@@ -1137,6 +1137,7 @@ export interface OpenFileArguments {
     scriptKind?: protocol.ScriptKindName | ScriptKind;
     hasMixedContent?: boolean;
     projectRootPath?: string;
+    languageId?: string;
 }
 
 /** @internal */
@@ -5105,6 +5106,7 @@ export class ProjectService {
                     file.hasMixedContent,
                     file.projectRootPath ? toNormalizedPath(file.projectRootPath) : undefined,
                 );
+                if (file.languageId) info.setLanguageId(file.languageId);
                 (openScriptInfos || (openScriptInfos = [])).push(info);
             }
         }
